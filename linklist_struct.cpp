@@ -189,6 +189,8 @@ int itrSearch(Node *node, int key)
     return index;
 }
 
+//recursive search
+
 int recSearch(Node *node, int key)
 {
     static int x = -1;
