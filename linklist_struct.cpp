@@ -153,6 +153,23 @@ int recSum(Node *node)
     }
 }
 
+// find maximum value in linkedlist
+
+int maxValue(Node *node)
+{
+    int maxVal = INT_MIN;
+
+    while(node != nullptr)
+    {
+        if (node->data > maxVal)
+        {
+            maxVal = node->data;
+        }
+        node = node->next;
+    }
+    return maxVal;
+}
+
 
 int main()
 {
@@ -168,6 +185,7 @@ int main()
     cout << reccount3(first) << endl;
     cout << itrsum(first) << endl;
     cout << recSum(first) << endl;
+    cout << maxValue(first) << endl;
 
 
 }
