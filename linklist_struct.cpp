@@ -189,6 +189,26 @@ int itrSearch(Node *node, int key)
     return index;
 }
 
+int recSearch(Node *node, int key)
+{
+    static int x = -1;
+
+    if (node != nullptr)
+    {
+         if (node->data == key)
+        {
+            return x + 1;
+        }
+        x++;
+        recSearch(node->next, key);
+    }
+    else
+    {
+        return -1;
+    }
+
+}
+
 int main()
 {
     addNode(10);
@@ -204,6 +224,7 @@ int main()
     cout << itrsum(first) << endl;
     cout << recSum(first) << endl;
     cout << maxValue(first) << endl;
-    cout << itrSearch(first, 14);
+    cout << itrSearch(first, 14) << endl;
+    cout << recSearch(first, 14) << endl;
 
 }
