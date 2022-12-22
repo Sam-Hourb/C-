@@ -170,6 +170,24 @@ int maxValue(Node *node)
     return maxVal;
 }
 
+// iterative search
+
+int itrSearch(Node *node, int key)
+{
+    int index = -1;
+
+    while (node != nullptr)
+    {
+        if (node->data == key)
+        {
+            return ++index;
+        }
+        index++;
+        node = node->next;
+    }
+
+    return index;
+}
 
 int main()
 {
@@ -186,6 +204,6 @@ int main()
     cout << itrsum(first) << endl;
     cout << recSum(first) << endl;
     cout << maxValue(first) << endl;
-
+    cout << itrSearch(first, 14);
 
 }
