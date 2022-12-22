@@ -11,6 +11,7 @@ struct Node
 
 Node *first;
 
+// add a new node to linkedlist
 
 void addNode(int num)
 {
@@ -32,6 +33,8 @@ void addNode(int num)
     }
 }
 
+// iterative display of linkedlist
+
 void itrdisplay(Node *node){
 
     while(node != nullptr)
@@ -40,6 +43,8 @@ void itrdisplay(Node *node){
         node = node->next;
     }
 }
+
+// recursive display of linkedlist
 
 Node recdisplay(Node *node)
 {
@@ -50,6 +55,7 @@ Node recdisplay(Node *node)
     }
 }
 
+// reverse recursive display of linkedlist
 
 Node rrecdisplay(Node *node)
 {
@@ -60,6 +66,7 @@ Node rrecdisplay(Node *node)
     }
 }
 
+// iterative count of nodes in linkedlist
 
 int itrcount(Node *node)
 {
@@ -72,6 +79,7 @@ int itrcount(Node *node)
     return count;
 }
 
+//recursive count of nodes in linkedlist
 
 int reccount(Node *node)
 {
@@ -87,6 +95,8 @@ int reccount(Node *node)
     }
 }
 
+// recursive count of nodes in linkedlist version 2
+
 int reccount2(Node *node)
 {
     static int x = 0;
@@ -96,6 +106,8 @@ int reccount2(Node *node)
     }
     return x;
 }
+
+//recursive count of nodes in linkedlist version 3
 
 int reccount3(Node *node)
 {
@@ -111,6 +123,7 @@ int reccount3(Node *node)
 
 }
 
+// iterative sum of data in linkedlist
 
 int itrsum(Node *node)
 {
@@ -123,6 +136,8 @@ int itrsum(Node *node)
 
     return sum;
 }
+
+// recursive sum of data in linkedlist
 
 int recSum(Node *node)
 {
