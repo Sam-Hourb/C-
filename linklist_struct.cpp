@@ -124,6 +124,20 @@ int itrsum(Node *node)
     return sum;
 }
 
+int recSum(Node *node)
+{
+    if (node != nullptr)
+    {
+
+        return recSum(node->next) + node->data;
+
+    }
+    else
+    {
+        return 0;
+    }
+}
+
 
 int main()
 {
@@ -137,7 +151,8 @@ int main()
     cout << reccount(first) << endl;
     cout << reccount2(first) << endl;
     cout << reccount3(first) << endl;
-    cout << itrsum(first);
+    cout << itrsum(first) << endl;
+    cout << recSum(first) << endl;
 
 
 }
