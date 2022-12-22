@@ -9,7 +9,7 @@ struct Node
 };
 
 
-Node *first;
+Node *first = nullptr;
 
 // add a new node to linkedlist
 
