@@ -170,6 +170,31 @@ int maxValue(Node *node)
     return maxVal;
 }
 
+// recursive maximum value
+
+int recMaxValue(Node *node)
+{
+    int x = INT_MIN;
+
+    if (node == nullptr)
+    {
+        return x;
+    }
+    else
+    {
+        x = recMaxValue(node->next);
+        
+        if(node->data > x )
+        {
+            return node->data;
+        }
+        else
+        {
+            return x;
+        }
+    }
+}
+
 // iterative search
 
 int itrSearch(Node *node, int key)
@@ -226,6 +251,7 @@ int main()
     cout << itrsum(first) << endl;
     cout << recSum(first) << endl;
     cout << maxValue(first) << endl;
+    cout << recMaxValue(first) << endl;
     cout << itrSearch(first, 14) << endl;
     cout << recSearch(first, 14) << endl;
 
