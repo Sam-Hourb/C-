@@ -211,7 +211,7 @@ int itrSearch(Node *node, int key)
         node = node->next;
     }
 
-    return index;
+    return -1;
 }
 
 //recursive search
