@@ -236,11 +236,37 @@ int recSearch(Node *node, int key)
 
 }
 
+// insert 
+
+void insertNode(int val, int index)
+{
+    if (index >= itrCount(first) || first == nullptr )
+    {
+        addNode(val);
+    }
+    else
+    {
+        Node *temp = first;
+        Node *temp1;
+
+        for(int i = 1; i < index; i++)
+        {
+            temp = temp->next;
+        }
+        temp1 = new Node;
+        temp1->data = val;
+        temp1->next = temp->next;
+        temp->next = temp1;
+    }
+
+}
+
 int main()
 {
     addNode(10);
     addNode(12);
     addNode(14);
+    insertNode(24, 2);
     itrdisplay(first);
     recdisplay(first);
     rrecdisplay(first);
