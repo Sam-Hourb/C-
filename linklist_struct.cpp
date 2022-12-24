@@ -318,7 +318,11 @@ int deleteNode(int index)
 
     if(first == nullptr || index < 0 || index > itrCount(first))
     {
-        return INT_MIN;
+      // exit(0);  // if you want the program stops working abruptly 
+      //throw new exception();  // if you want the program stops working abruptly 
+      //abort();  // if you want the program stops working abruptly 
+        
+        return INT_MIN; // if you want the program return minimum integer vlaue and ignore the error.
     }
     if (index == 0 )
     {
