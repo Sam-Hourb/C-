@@ -307,6 +307,7 @@ void insertNode(int val, int index)
 
 int main()
 {
+    Node *temp;
     addNode(10);
     addNode(12);
     addNode(14);
@@ -324,7 +325,9 @@ int main()
     cout << recSum(first) << endl;
     cout << maxValue(first) << endl;
     cout << recMaxValue(first) << endl;
-    cout << itrSearch(first, 14) << endl;
-    cout << recSearch(first, 14) << endl;
+    temp = recSearch(first, 20);
+    cout << temp->data << endl;
+    temp = itrSearch(first, 55);
+    cout << temp->data << endl;
 
 }
