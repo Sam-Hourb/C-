@@ -289,11 +289,12 @@ void insertNode(int val, int index)
     }
     else
     {
-        if (index >= itrCount(first)){
+       /* if (index >= itrCount(first)){
             index = itrCount(first);
         }
-
-        for(int i = 1; i < index; i++)
+        for(int i = 1; i < index; i++) */
+        
+        for(int i = 1; i < index && temp->next != nullptr ; i++)
         {
             temp = temp->next;
         }
