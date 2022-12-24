@@ -310,6 +310,37 @@ void insertNode(int val, int index)
 
 }
 
+int deleteNode(int index)
+{
+    Node *temp;
+    Node *cur = first;
+    int datum;
+
+    if(first == nullptr || index < 0 || index > itrCount(first))
+    {
+        return INT_MIN;
+    }
+    if (index == 0 )
+    {
+       datum = first->data;
+       cur = first;
+       first = first->next;
+       delete cur;
+       return datum;
+    }
+
+        for (int x = 1; x < index && cur->next != nullptr ; x++)
+    {
+        //cur = first;
+        temp = cur;
+        cur = cur->next;
+    }
+    temp->next = cur->next;
+    datum = cur->data;
+    delete cur;
+    return datum;
+}
+
 int main()
 {
     Node *temp;
@@ -319,6 +350,10 @@ int main()
     insertNode(24, 0);
     insertNode(50, 4);
     insertNode(55, 7);
+     cout << deleteNode(4) << endl;
+    deleteNode(6);
+    deleteNode(0);
+    deleteNode(-1);
     itrdisplay(first);
     recdisplay(first);
     rrecdisplay(first);
