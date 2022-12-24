@@ -277,7 +277,11 @@ void insertNode(int val, int index)
 {
     Node *temp = first;
     Node *temp1;
-
+    
+    if(index < 0 )
+    {
+        return;
+    }
 
     if (index == 0 || first == nullptr)
     {
