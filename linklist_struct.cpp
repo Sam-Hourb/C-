@@ -197,7 +197,22 @@ int recMaxValue(Node *node)
 
 // iterative search
 
-int itrSearch(Node *node, int key)
+Node* itrSearch(Node *node, int key)
+{
+    while (node != nullptr)
+    {
+        if ( key == node->data)
+        {
+            return (node);
+        }
+
+        node = node->next;
+
+    }
+    return nullptr;
+}
+
+/* int itrSearch(Node *node, int key)
 {
     int index = -1;
 
@@ -212,11 +227,31 @@ int itrSearch(Node *node, int key)
     }
 
     return -1;
-}
+} */
 
 //recursive search
 
-int recSearch(Node *node, int key)
+Node* recSearch(Node *node, int key)
+{
+
+    if (node == nullptr)
+    {
+       return nullptr;
+    }
+    else
+    {
+         if (key == node->data)
+        {
+            return (node);
+        }
+        else
+        {
+            return recSearch(node->next, key);
+        }
+    }
+}
+
+/* int recSearch(Node *node, int key)
 {
     static int x = -1;
 
@@ -234,7 +269,7 @@ int recSearch(Node *node, int key)
         return -1;
     }
 
-}
+} */
 
 // insert 
 
