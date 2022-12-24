@@ -277,7 +277,8 @@ void insertNode(int val, int index)
 {
     Node *temp = first;
     Node *temp1;
-    
+
+
     if(index < 0 )
     {
         return;
@@ -293,21 +294,26 @@ void insertNode(int val, int index)
     }
     else
     {
-       /* if (index >= itrCount(first)){
-            index = itrCount(first);
-        }
-        for(int i = 1; i < index; i++) */
-        
         for(int i = 1; i < index && temp->next != nullptr ; i++)
         {
             temp = temp->next;
         }
-        temp1 = new Node;
-        temp1->data = val;
-        temp1->next = temp->next;
-        temp->next = temp1;
-    }
 
+        if(index >= itrCount())  // (temp->next == nullptr)
+        {
+            temp1 = new Node;
+            temp1->data = val;
+            temp1->next = nullptr;
+            last->next = temp1;
+            last = temp1;
+        } else
+        {
+            temp1 = new Node;
+            temp1->data = val;
+            temp1->next = temp->next;
+            temp->next = temp1;
+        }
+    }
 }
 
 int deleteNode(int index)
@@ -316,14 +322,14 @@ int deleteNode(int index)
     Node *cur = first;
     int datum;
 
-    if(first == nullptr || index < 0 || index > itrCount(first))
+    if(first == nullptr || index < 0 || index > itrCount())
     {
-      // exit(0);  // if you want the program stops working abruptly 
-      //throw new exception();  // if you want the program stops working abruptly 
-      //abort();  // if you want the program stops working abruptly 
-        
-        return INT_MIN; // if you want the program return minimum integer vlaue and ignore the error.
+        // exit(0);  // if you want the program stops working abruptly
+        //throw new exception();  // if you want the program stops working abruptly
+        //abort();  // if you want the program stops working abruptly
+        return INT_MIN;
     }
+
     if (index == 0 )
     {
        datum = first->data;
@@ -333,16 +339,27 @@ int deleteNode(int index)
        return datum;
     }
 
-        for (int x = 1; x < index && cur->next != nullptr ; x++)
+    for (int x = 1; x < index && cur->next != nullptr ; x++)
     {
-        //cur = first;
         temp = cur;
         cur = cur->next;
     }
-    temp->next = cur->next;
-    datum = cur->data;
-    delete cur;
-    return datum;
+
+    if (index == itrCount()) // (cur->next == nullptr)
+    {
+        temp->next = nullptr;
+        last = temp;
+        datum = cur->data;
+        delete cur;
+        return datum;
+    }
+    else 
+    {
+        temp->next = cur->next;
+        datum = cur->data;
+        delete cur;
+        return datum;
+    }
 }
 
 int main()
