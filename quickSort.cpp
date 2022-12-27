@@ -12,6 +12,8 @@ void swap(int *a, int *b)
 int partition(int *A, int l, int h)
 {
     int pivot = A[(l + h)/2];
+    //int pivot = A[l];
+    //int pivot = A[h-1];
     int i = l;
     int j = h-1;
 
