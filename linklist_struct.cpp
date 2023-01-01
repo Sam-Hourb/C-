@@ -1,4 +1,5 @@
 #include <iostream>
+#include <climits>
 
 using namespace std;
 
@@ -46,7 +47,7 @@ void itrdisplay(Node *node){
 
 // recursive display of linkedlist
 
-Node recdisplay(Node *node)
+void recdisplay(Node *node)
 {
     if(node != nullptr)
     {
@@ -57,7 +58,7 @@ Node recdisplay(Node *node)
 
 // reverse recursive display of linkedlist
 
-Node rrecdisplay(Node *node)
+void rrecdisplay(Node *node)
 {
     if(node != nullptr)
     {
