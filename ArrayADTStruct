@@ -8,6 +8,7 @@ struct Array
     int lenght = 0;
 };
 
+//_______________________________
 
 void addLast(Array &a, int e)
 {
@@ -17,6 +18,8 @@ void addLast(Array &a, int e)
         a.lenght++;
     }
 }
+
+//_______________________________
 
 void insert(Array &a, int i, int e)
 {
@@ -41,6 +44,8 @@ void insert(Array &a, int i, int e)
     }
 }
 
+//_______________________________
+
 void deleteIndex(Array &a, int index)
 {
     if (index < a.size && index <= a.lenght && a.lenght < a.size && index >= 0)
@@ -62,6 +67,8 @@ void deleteIndex(Array &a, int index)
     }
 }
 
+//_______________________________
+
 void display(Array a)
 {
     for (int it = 0; it < a.lenght; it++)
@@ -69,6 +76,8 @@ void display(Array a)
         cout << a.A[it] << endl;
     }
 }
+
+//_______________________________
 
 int main()
 {
