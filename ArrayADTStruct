@@ -41,6 +41,27 @@ void insert(Array &a, int i, int e)
     }
 }
 
+void deleteIndex(Array &a, int index)
+{
+    if (index < a.size && index <= a.lenght && a.lenght < a.size && index >= 0)
+    {
+         if ( index == a.lenght)
+        {
+            a.A[a.lenght] = 0;
+            a.lenght--;
+        }   
+         else 
+        {
+            for (int c = index ; c < a.lenght; c++ )
+            {
+                a.A[c] = a.A[c+1];
+            }
+            a.A[a.lenght]= 0;
+            a.lenght--;
+        }
+    }
+}
+
 void display(Array a)
 {
     for (int it = 0; it < a.lenght; it++)
@@ -61,6 +82,8 @@ int main()
     addLast(myArray, 3);
     addLast(myArray, 4);
     insert(myArray, 0, 6);
+    addLast(myArray, 7);
+    deleteIndex(myArray, 5);
 
     display(myArray);
 
