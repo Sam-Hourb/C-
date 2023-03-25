@@ -1,1 +1,24 @@
+class Rectangle
+{
+  private:
+    int width;
+    int length;
+  
+  public:
+    
+    Rectangle(int w, int l)
+    {
+       width = w;
+       lenght = l;
+    }
+    
+    Rectangle operator+(Rectangle r)
+    {
+       Rectangle temp;
+       temp.width = width + r.width;
+       temp.length = length + r. lenght;
+       
+       retrun temp;
+    }
+}
 
