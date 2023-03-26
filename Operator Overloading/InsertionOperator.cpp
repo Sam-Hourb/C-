@@ -43,6 +43,6 @@ int main ()
   Rectangle r2(4,6);
   Rectangle r4 = r + r2; 
   
-  cout << r4 << endl << r << endl << r2 << endl;
+  cout << r4 << " = " << r << " + " << r2 << endl;
   
 }
