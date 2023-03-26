@@ -16,6 +16,15 @@ class Rectangle
        width = w;
        length = l;
     }
+  
+    Rectangle operator+(Rectangle r)
+    {
+       Rectangle temp;
+       temp.width = width + r.width;
+       temp.length = length + r. length;
+
+       return temp;
+    }
 
     friend  ostream & operator<<(ostream & outr, Rectangle & r);
 
