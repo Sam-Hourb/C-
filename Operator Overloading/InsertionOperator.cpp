@@ -31,7 +31,7 @@ class Rectangle
 
     ostream & operator<<(ostream & outr, Rectangle & r)
     {
-       outr << "Length = " << r.width << "  " << "Width = " << r.length << endl;
+       outr << "Length = " << r.width << "  " << "Width = " << r.length;
        
        return outr;
     }
@@ -43,6 +43,6 @@ int main ()
   Rectangle r2(4,6);
   Rectangle r4 = r + r2; 
   
-  cout << r4 << " = " << r << " + " << r2 << endl;
+  cout << "( " << r4 << " ) = " << "( " << r <<  " ) + (" << r2 << ")" << endl;
   
 }
