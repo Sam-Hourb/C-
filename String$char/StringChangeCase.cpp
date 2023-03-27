@@ -5,7 +5,8 @@ using namespace std;
 
 void toUpper(string &ar)
 {
-    for(int i = 0; ar[i] != '\0' ; i++)
+    // for(int i = 0; ar[i] != '\0' ; i++)
+    for(int i = 0; i < ar.length() ; i++)
     {
         if(ar[i] >= 97 && ar[i] <= 122)
         {
@@ -16,7 +17,8 @@ void toUpper(string &ar)
 
 void toLower(string &ar)
 {
-    for(int i = 0; ar[i] != '\0' ; i++)
+    // for(int i = 0; ar[i] != '\0' ; i++)
+    for(int i = 0; i < ar.length() ; i++)
     {
         if(ar[i] >= 65 && ar[i] <= 90)
         {
