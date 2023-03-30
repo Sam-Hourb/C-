@@ -69,6 +69,18 @@ void deleteIndex(Array *a, int index)
     }
 }
 
+int linearSearch(Array a, int k)
+{
+    for (int i = 0; i < a.lenght; i++)
+    {
+        if(a.A[i] == k)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+
 void display(Array a)
 {
     for (int it = 0; it < a.lenght; it++)
@@ -95,5 +107,7 @@ int main()
     deleteIndex(&myArray, 5);
 
     display(myArray);
+    
+    cout << "index of key: " << linearSearch(myArray, 6) << endl;
 
 }
