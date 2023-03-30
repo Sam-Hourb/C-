@@ -10,6 +10,15 @@ struct Array
 
 //_______________________________
 
+void create(Array &a)
+{
+    cout << " enter the size of arry: ";
+    cin >> a.size;
+    a.A = new int[a.size];
+}
+
+//_______________________________
+
 void addLast(Array &a, int e)
 {
     if(a.lenght < a.size)
@@ -82,9 +91,8 @@ void display(Array a)
 int main()
 {
     Array myArray;
-    cout << " enter the size of arry: ";
-    cin >> myArray.size;
-    myArray.A = new int[myArray.size];
+    
+    create(myArray);
 
     addLast(myArray, 1);
     addLast(myArray, 2);
