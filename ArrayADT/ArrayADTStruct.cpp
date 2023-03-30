@@ -73,6 +73,21 @@ int linearSearch(Array a, int k)
     return -1;
 }
 
+void bubbleSort(Array *a)
+{
+    for(int i = 0; i < a->lenght - 1 ; i++)
+    {
+        for(int j = 0; j < a->lenght -1 - i; j++)
+        {
+            if(a->A[j] > a->A[j+1])
+            {
+                swapElement(&a->A[j], &a->A[j+1]);
+            }
+
+        }
+    }
+}
+
 void display(Array a)
 {
     for (int it = 0; it < a.lenght; it++)
@@ -95,6 +110,12 @@ int main()
 
     deleteIndex(&myArray, 5);
 
+    display(myArray);
+    
+    bubbleSort(&myArray);
+    
+    cout << "After sort: " << endl;
+    
     display(myArray);
     
     cout << "index of key: " << linearSearch(myArray, 6) << endl;
