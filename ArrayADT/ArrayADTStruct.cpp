@@ -50,22 +50,14 @@ void insert(Array *a, int i, int e)
 
 void deleteIndex(Array *a, int index)
 {
-    if (index < a->size && index <= a->lenght && a->lenght <= a->size && index >= 0)
+
+    if (index < a->size && index < a->lenght && a->lenght <= a->size && index >= 0)
     {
-         if ( index == a->lenght)
-        {
-            //a->A[a->lenght] = 0;
-            a->lenght--;
-        }   
-         else 
-        {
             for (int c = index ; c < a->lenght-1; c++ )
             {
                 a->A[c] = a->A[c+1];
             }
-            //a->A[a->lenght]= 0;
             a->lenght--;
-        }
     }
 }
 
@@ -93,9 +85,6 @@ int main()
 {
     Array myArray;
     create(&myArray);
-    // cout << " enter the size of arry: ";
-    // cin >> myArray.size;
-    // myArray.A = new int[myArray.size];
 
     addLast(&myArray, 1);
     addLast(&myArray, 2);
