@@ -57,7 +57,7 @@ void insert(Array &a, int i, int e)
 
 void deleteIndex(Array &a, int index)
 {
-    if (index < a.size && index <= a.lenght && a.lenght < a.size && index >= 0)
+    if (index < a.size && index <= a.lenght && a.lenght <= a.size && index >= 0)
     {
          if ( index == a.lenght)
         {
