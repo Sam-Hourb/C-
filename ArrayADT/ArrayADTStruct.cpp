@@ -59,7 +59,7 @@ void deleteIndex(Array *a, int index)
         }   
          else 
         {
-            for (int c = index ; c < a->lenght; c++ )
+            for (int c = index ; c < a->lenght-1; c++ )
             {
                 a->A[c] = a->A[c+1];
             }
