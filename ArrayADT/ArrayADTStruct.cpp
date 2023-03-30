@@ -43,14 +43,12 @@ void insert(Array *a, int i, int e)
 
             a->A[i] = e;
             a->lenght++;
-        }
-        
+        }     
     }
 }
 
 void deleteIndex(Array *a, int index)
 {
-
     if (index < a->size && index < a->lenght && a->lenght <= a->size && index >= 0)
     {
             for (int c = index ; c < a->lenght-1; c++ )
@@ -83,7 +81,6 @@ void bubbleSort(Array *a)
             {
                 swapElement(&a->A[j], &a->A[j+1]);
             }
-
         }
     }
 }
