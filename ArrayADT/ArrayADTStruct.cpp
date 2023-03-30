@@ -54,7 +54,7 @@ void deleteIndex(Array *a, int index)
     {
          if ( index == a->lenght)
         {
-            a->A[a->lenght] = 0;
+            //a->A[a->lenght] = 0;
             a->lenght--;
         }   
          else 
@@ -63,7 +63,7 @@ void deleteIndex(Array *a, int index)
             {
                 a->A[c] = a->A[c+1];
             }
-            a->A[a->lenght]= 0;
+            //a->A[a->lenght]= 0;
             a->lenght--;
         }
     }
